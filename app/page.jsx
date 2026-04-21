@@ -165,11 +165,11 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-black text-white pt-16 pb-8">
+      <footer className="bg-black text-white pt-10 pb-5">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid gap-10 md:grid-cols-3 mb-12">
+          <div className="mb-8 grid gap-7 md:grid-cols-3">
             <div className="md:col-span-1">
-              <Link className="mb-5 inline-flex items-center gap-2" href="/">
+              <Link className="mb-3 inline-flex items-center gap-2" href="/">
                 <span className="inline-flex rounded-xl bg-white px-3 py-2 shadow-[0_8px_22px_-12px_rgba(255,255,255,0.5)]">
                   <img
                     src="/logoorg.png"
@@ -184,7 +184,7 @@ export default function Home() {
                 in the lush hills of Wayanad, Kerala, our mission is simple yet
                 powerful:
               </p>
-              <div className="mt-6 flex gap-4">
+              <div className="mt-4 flex gap-3">
                 <Link
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20"
                   href="https://youtube.com/@greencoffeecommodityscoffee?si=19KJFemyU0lWOsar"
@@ -201,25 +201,25 @@ export default function Home() {
             </div>
 
             <div>
-              <h4 className="mb-5 text-lg font-semibold text-white">Contact</h4>
-              <ul className="space-y-4 text-white">
+              <h4 className="mb-3 text-lg font-semibold text-white">Contact</h4>
+              <ul className="space-y-3 text-white">
                 <li className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-emerald-300" />
                   <span>info@greencommoditys.com</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Phone className="h-5 w-5 text-emerald-300" />
-                  <span>INDIA +917558963712</span>
+                  <span>INDIA +91 7558963712</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Phone className="h-5 w-5 text-emerald-300" />
-                  <span>SAUDI +966559407752</span>
+                  <span>SAUDI +966 559407752</span>
                 </li>
               </ul>
             </div>
 
             <div>
-              <h4 className="mb-5 text-lg font-semibold text-white">Address</h4>
+              <h4 className="mb-3 text-lg font-semibold text-white">Address</h4>
               <div className="flex items-start gap-3 text-white">
                 <MapPin className="mt-1 h-5 w-5 text-emerald-300" />
                 <span className="leading-relaxed">
@@ -229,7 +229,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-center md:flex-row md:text-left">
+          <div className="flex flex-col items-center justify-between gap-2 border-t border-white/10 pt-4 text-center md:flex-row md:text-left">
             <p className="text-sm text-white">
               © 2026 Green Coffee Commoditys. All rights reserved.
             </p>
