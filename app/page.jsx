@@ -1,10 +1,22 @@
 import { Link } from "@/components/Link";
 import { Phone, Mail, MapPin } from "lucide-react";
-import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
+import { FaInstagram, FaYoutube } from "react-icons/fa";
 import { DottedGlowBackground } from "@/components/ui/dotted-glow-background";
 import { CanvasText } from "@/components/ui/canvas-text";
 import { ProductShowcaseSection } from "@/components/ProductShowcaseSection";
+import { Button } from "@/components/ui/moving-border";
 import { cn } from "@/lib/utils";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
+
+const storyHeadingFont = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+});
+
+const storyBodyFont = Manrope({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+});
 
 export default function Home() {
   return (
@@ -93,39 +105,45 @@ export default function Home() {
       <ProductShowcaseSection />
 
       {/* Our Story Section */}
-      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#eef7ef_0%,#e6f4e6_100%)] px-6 pt-8 pb-12 lg:px-8 lg:pt-10 lg:pb-14">
+      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#eef7ef_0%,#e6f4e6_100%)] px-6 pt-6 pb-8 lg:px-8 lg:pt-8 lg:pb-10">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-300/70 to-transparent" />
 
-        <div className="mx-auto flex max-w-7xl flex-col gap-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-6">
           <div className="mb-1 text-center sm:mb-3">
-            <h2 className="text-3xl font-semibold tracking-tight text-black sm:text-5xl">
+            <h2
+              className={`${storyHeadingFont.className} text-3xl font-semibold tracking-tight text-black sm:text-5xl`}
+            >
               Our Story
             </h2>
-            <p className="mt-4 text-base text-gray-600 max-w-2xl mx-auto sm:text-lg">
+            <p
+              className={`${storyBodyFont.className} mx-auto mt-4 max-w-2xl text-base text-gray-600 sm:text-lg`}
+            >
               Discover the journey behind Green Coffee Commoditys and how we've
               been committed to delivering excellence in every bean and spice.
             </p>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-8 items-center">
-            {/* Image Placeholder */}
+          <div className="flex flex-col lg:flex-row gap-6 items-center">
             <div className="w-full lg:w-1/2">
-              <div className="relative overflow-hidden rounded-[16px] sm:rounded-[28px] border border-emerald-200/40 bg-gradient-to-br from-emerald-50 to-green-50/80 shadow-[0_25px_70px_-38px_rgba(22,101,52,0.25)] aspect-square flex items-center justify-center">
+              <div className="relative mx-auto w-full max-w-[460px] overflow-hidden rounded-[16px] border border-emerald-200/40 bg-white shadow-[0_20px_55px_-35px_rgba(0,0,0,0.28)] aspect-[16/10]">
                 <img
-                  src="/placeholder.webp"
+                  src="/cofe1.jpg"
                   alt="Our Story"
                   className="w-full h-full object-cover"
                 />
               </div>
             </div>
 
-            {/* Content */}
-            <div className="w-full lg:w-1/2 flex flex-col gap-6">
+            <div className="w-full lg:w-1/2 flex flex-col gap-4">
               <div className="space-y-4">
-                <h3 className="text-2xl sm:text-3xl font-semibold text-black">
+                <h3
+                  className={`${storyHeadingFont.className} text-2xl font-semibold text-black sm:text-3xl`}
+                >
                   Crafted with Passion
                 </h3>
-                <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
+                <p
+                  className={`${storyBodyFont.className} text-base leading-relaxed text-gray-700 sm:text-lg`}
+                >
                   From the lush coffee plantations to your cup, we believe in
                   quality, sustainability, and building lasting relationships
                   with our partners worldwide. Every product tells a story of
@@ -133,11 +151,13 @@ export default function Home() {
                 </p>
               </div>
 
-              <Link
-                href="/story"
-                className="inline-flex items-center justify-center rounded-full bg-[#2f7d32] hover:bg-[#1e5a24] text-white font-semibold px-8 py-3 transition-colors w-fit"
-              >
-                Read Our Story
+              <Link href="/story" className="w-fit">
+                <Button
+                  borderRadius="1.75rem"
+                  className={`${storyBodyFont.className} border-[#86efac] bg-[#dcfce7] px-8 py-3 font-semibold text-[#166534]`}
+                >
+                  Read Our Story
+                </Button>
               </Link>
             </div>
           </div>
@@ -145,123 +165,75 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-text text-white pt-20 pb-10">
+      <footer className="bg-black text-white pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-12 mb-16">
-            <div className="col-span-1 md:col-span-2">
-              <Link className="flex items-center gap-2 mb-6" href="/">
-                <img src="/logorg.png" alt="Logo" className="h-12 w-auto" />
+          <div className="grid gap-10 md:grid-cols-3 mb-12">
+            <div className="md:col-span-1">
+              <Link className="mb-5 inline-flex items-center gap-2" href="/">
+                <span className="inline-flex rounded-xl bg-white px-3 py-2 shadow-[0_8px_22px_-12px_rgba(255,255,255,0.5)]">
+                  <img
+                    src="/logoorg.png"
+                    alt="Green Coffee Commoditys Logo"
+                    className="h-12 w-auto"
+                  />
+                </span>
               </Link>
-              <p className="text-gray-400 max-w-sm mb-8">
-                Crafting meaningful journeys since 2025. Travel that connects,
-                inspires, and respects.
+              <p className="max-w-md text-sm leading-relaxed text-white">
+                At Green Coffee Commoditys, we believe in coffee that tells a
+                story — a story of trust, tradition, and transformation. Based
+                in the lush hills of Wayanad, Kerala, our mission is simple yet
+                powerful:
               </p>
-              <div className="flex gap-4">
+              <div className="mt-6 flex gap-4">
                 <Link
-                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-cta transition-colors"
-                  href="https://www.instagram.com/hulooltourism?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20"
+                  href="https://youtube.com/@greencoffeecommodityscoffee?si=19KJFemyU0lWOsar"
                 >
-                  <FaInstagram className="w-5 h-5" />
+                  <FaYoutube className="h-5 w-5" />
                 </Link>
                 <Link
-                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-cta transition-colors"
-                  href="https://www.facebook.com/p/Hulool-Tourism-61577107687880/"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20"
+                  href="https://www.instagram.com/aslam_ayankey?igsh=MTFzYTlsejg5YmFyeA=="
                 >
-                  <FaFacebook className="w-5 h-5" />
-                </Link>
-                <Link
-                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-cta transition-colors"
-                  href="#"
-                >
-                  <FaTwitter className="w-5 h-5" />
+                  <FaInstagram className="h-5 w-5" />
                 </Link>
               </div>
             </div>
+
             <div>
-              <h4 className="font-heading text-xl text-white mb-6">
-                {" "}
-                Explore{" "}
-              </h4>
-              <ul className="space-y-4">
-                <li>
-                  <Link
-                    className="text-gray-400 hover:text-cta transition-colors"
-                    href="/about"
-                  >
-                    {" "}
-                    About Us{" "}
-                  </Link>
+              <h4 className="mb-5 text-lg font-semibold text-white">Contact</h4>
+              <ul className="space-y-4 text-white">
+                <li className="flex items-center gap-3">
+                  <Mail className="h-5 w-5 text-emerald-300" />
+                  <span>info@greencommoditys.com</span>
                 </li>
-                <li>
-                  <Link
-                    className="text-gray-400 hover:text-cta transition-colors"
-                    href="/destinations"
-                  >
-                    {" "}
-                    Destinations{" "}
-                  </Link>
+                <li className="flex items-center gap-3">
+                  <Phone className="h-5 w-5 text-emerald-300" />
+                  <span>INDIA +917558963712</span>
                 </li>
-                <li>
-                  <Link
-                    className="text-gray-400 hover:text-cta transition-colors"
-                    href="/services"
-                  >
-                    {" "}
-                    Packages{" "}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="text-gray-400 hover:text-cta transition-colors"
-                    href="/blog"
-                  >
-                    {" "}
-                    Blog{" "}
-                  </Link>
+                <li className="flex items-center gap-3">
+                  <Phone className="h-5 w-5 text-emerald-300" />
+                  <span>SAUDI +966559407752</span>
                 </li>
               </ul>
             </div>
+
             <div>
-              <h4 className="font-heading text-xl text-white mb-6">
-                {" "}
-                Contact{" "}
-              </h4>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3 text-gray-400">
-                  <MapPin className="w-5 h-5 text-secondary mt-1" />
-                  <span>
-                    {" "}
-                    Doha Al Jadeed
-                    <br />
-                    Doha, Qatar{" "}
-                  </span>
-                </li>
-                <li className="flex items-center gap-3 text-gray-400">
-                  <Phone className="w-5 h-5 text-secondary" />
-                  <span> +974 72116464 </span>
-                </li>
-                <li className="flex items-center gap-3 text-gray-400">
-                  <Mail className="w-5 h-5 text-secondary" />
-                  <span> hulooltourism@gmail.com </span>
-                </li>
-              </ul>
+              <h4 className="mb-5 text-lg font-semibold text-white">Address</h4>
+              <div className="flex items-start gap-3 text-white">
+                <MapPin className="mt-1 h-5 w-5 text-emerald-300" />
+                <span className="leading-relaxed">
+                  Anchukunnu, Wayanad, Kerala, India 670645
+                </span>
+              </div>
             </div>
           </div>
-          <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-500 text-sm">
-              {" "}
-              © 2026 Hulool Tourism. All rights reserved.{" "}
+
+          <div className="flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-center md:flex-row md:text-left">
+            <p className="text-sm text-white">
+              © 2026 Green Coffee Commoditys. All rights reserved.
             </p>
-            <div className="flex gap-6 text-sm text-gray-500">
-              <Link className="hover:text-white transition-colors" href="#">
-                {" "}
-                Privacy Policy{" "}
-              </Link>
-              <Link className="hover:text-white transition-colors" href="#">
-                {" "}
-                Terms of Service{" "}
-              </Link>
-            </div>
+            <p className="text-sm text-white">Wayanad, Kerala, India</p>
           </div>
         </div>
       </footer>

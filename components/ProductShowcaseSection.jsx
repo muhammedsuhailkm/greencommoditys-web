@@ -98,7 +98,6 @@ function ProductCard({ product, tone = "brown" }) {
     </CardContainer>
   );
 }
-
 function QuotePanel() {
   return (
     <div className="relative flex h-[220px] w-full overflow-hidden rounded-[16px] border border-emerald-200/80 bg-[linear-gradient(135deg,rgba(255,255,255,0.92),rgba(236,248,238,0.95))] p-5 shadow-[0_25px_70px_-38px_rgba(22,101,52,0.25)] sm:h-[520px] sm:rounded-[28px] sm:p-10">
@@ -139,77 +138,41 @@ function ServicesPanel() {
   ];
 
   return (
-    <div className="relative flex h-[220px] w-full overflow-hidden rounded-[16px] border border-emerald-200/40 bg-gradient-to-br from-emerald-50 to-green-50/80 p-4 sm:h-[340px] sm:rounded-[28px] sm:p-8 shadow-[0_25px_70px_-38px_rgba(22,101,52,0.2)]">
-      {/* Background Images with Better Visibility - Desktop Only */}
-      <div className="hidden sm:block absolute inset-0 opacity-20 pointer-events-none overflow-hidden">
-        <img
-          src="/log.png"
-          alt="Background"
-          className="absolute left-0 top-1/2 -translate-y-1/2 w-80 h-80 object-cover"
-        />
-        <img
-          src="/log1.jpg"
-          alt="Background"
-          className="absolute right-0 top-1/2 -translate-y-1/2 w-80 h-80 object-cover"
-        />
-      </div>
-
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(134,239,172,0.1),transparent_50%)]" />
-
-      {/* Center Moving Image - Desktop Only */}
-      <div className="hidden sm:flex absolute inset-0 items-center justify-center pointer-events-none">
-        <div className="animate-move-to-center">
-          <img
-            src="/black.webp"
-            alt="Coffee beans and spices"
-            className="w-48 h-48 object-cover rounded-lg opacity-40"
-          />
-        </div>
-      </div>
-
-      {/* Decorative Images */}
-      <div className="hidden sm:block absolute bottom-2 right-2 w-16 h-16 opacity-30 pointer-events-none">
-        <img
-          src="/cofee.webp"
-          alt="Coffee decoration"
-          className="w-full h-full object-contain"
-        />
-      </div>
-      <div className="hidden sm:block absolute top-4 right-6 w-12 h-12 opacity-25 pointer-events-none">
-        <img
-          src="/card.webp"
-          alt="Cardamom decoration"
-          className="w-full h-full object-contain rounded-full"
-        />
-      </div>
-
-      <div className="relative w-full flex flex-col justify-between gap-2 sm:gap-3 z-10">
-        {/* Title */}
+    <div className="relative flex h-[220px] w-full overflow-hidden rounded-[16px] border border-black/10 bg-[linear-gradient(180deg,#ffffff_0%,#fafafa_100%)] p-3 sm:h-[340px] sm:rounded-[28px] sm:p-7 shadow-[0_24px_50px_-34px_rgba(0,0,0,0.35)]">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-black/20 to-transparent" />
+      <div className="relative z-10 flex w-full flex-col justify-between gap-2 sm:gap-5">
         <div>
           <span
-            className={`${bodyFont.className} text-[9px] font-semibold tracking-[0.2em] uppercase text-emerald-700 block sm:text-xs`}
+            className={`${bodyFont.className} hidden text-[10px] font-semibold tracking-[0.16em] uppercase text-black/70 sm:block sm:text-xs`}
           >
-            Our Products And Services
+            Products and Services
+          </span>
+          <span
+            className={`${bodyFont.className} block text-[10px] font-semibold tracking-[0.16em] uppercase text-black sm:hidden`}
+          >
+            Products and Services
           </span>
         </div>
 
-        {/* Main Services - Desktop */}
-        <div className="hidden sm:grid grid-cols-3 gap-3 flex-1">
+        <div className="hidden flex-1 sm:grid sm:grid-cols-3 sm:gap-3">
           {mainServices.map((service, idx) => (
-            <div key={idx} className="flex gap-3">
+            <div
+              key={idx}
+              className="group flex gap-3 rounded-xl border border-black/10 bg-white p-3 transition-colors duration-300 hover:bg-neutral-50"
+            >
               <div className="flex-shrink-0 mt-1">
-                <div className="flex items-center justify-center h-6 w-6 rounded-full bg-[#d7c65d]/30 border border-[#d7c65d]">
-                  <div className="h-2 w-2 rounded-full bg-[#d7c65d]" />
+                <div className="flex h-6 w-6 items-center justify-center rounded-full border border-black/20 bg-black/[0.03] transition-colors duration-300 group-hover:bg-black/90">
+                  <div className="h-2 w-2 rounded-full bg-black transition-colors duration-300 group-hover:bg-white" />
                 </div>
               </div>
               <div className="flex-1">
                 <p
-                  className={`${bodyFont.className} text-sm font-semibold text-emerald-900 mb-0.5`}
+                  className={`${bodyFont.className} mb-1 text-sm leading-tight font-semibold text-black`}
                 >
                   {service.title}
                 </p>
                 <p
-                  className={`${bodyFont.className} text-xs text-emerald-700/80`}
+                  className={`${bodyFont.className} text-xs leading-snug text-black/65`}
                 >
                   {service.desc}
                 </p>
@@ -218,18 +181,20 @@ function ServicesPanel() {
           ))}
         </div>
 
-        {/* Main Services - Mobile */}
-        <div className="sm:hidden grid grid-cols-1 gap-2 flex-1">
+        <div className="sm:hidden grid grid-cols-1 gap-1.5 flex-1">
           {mainServices.map((service, idx) => (
-            <div key={idx} className="flex gap-2">
+            <div
+              key={idx}
+              className="flex gap-1.5 rounded-md border border-black/10 bg-white px-1.5 py-1"
+            >
               <div className="flex-shrink-0 mt-0.5">
-                <div className="flex items-center justify-center h-4 w-4 rounded-full bg-[#d7c65d]/30 border border-[#d7c65d]">
-                  <div className="h-1.5 w-1.5 rounded-full bg-[#d7c65d]" />
+                <div className="flex h-4 w-4 items-center justify-center rounded-full border border-black/30 bg-black/5">
+                  <div className="h-1.5 w-1.5 rounded-full bg-black" />
                 </div>
               </div>
               <div className="flex-1">
                 <p
-                  className={`${bodyFont.className} text-[9px] font-semibold text-emerald-900`}
+                  className={`${bodyFont.className} text-[8px] leading-tight font-semibold text-black`}
                 >
                   {service.title}
                 </p>
@@ -238,32 +203,31 @@ function ServicesPanel() {
           ))}
         </div>
 
-        {/* Support Services */}
-        <div className="border-t border-emerald-200/40 pt-2 sm:pt-3">
+        <div className="border-t border-black/10 pt-1.5 sm:pt-4">
           <ul className="hidden sm:grid grid-cols-3 gap-2 sm:gap-2">
             {supportServices.map((item, idx) => (
               <li
                 key={idx}
-                className="flex gap-2 items-start bg-emerald-100/60 rounded-lg p-2.5 border border-emerald-200/60"
+                className="flex items-start gap-2 rounded-lg border border-black/10 bg-white p-2.5"
               >
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#d7c65d] flex-shrink-0 mt-1" />
+                <span className="mt-1 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-black/85" />
                 <span
-                  className={`${bodyFont.className} text-xs font-semibold text-emerald-900 leading-snug`}
+                  className={`${bodyFont.className} text-xs leading-snug font-semibold text-black/85`}
                 >
                   {item}
                 </span>
               </li>
             ))}
           </ul>
-          <ul className="sm:hidden grid grid-cols-1 gap-1">
+          <ul className="sm:hidden grid grid-cols-1 gap-0.5">
             {supportServices.map((item, idx) => (
               <li
                 key={idx}
-                className="flex gap-2 items-start bg-emerald-100/60 rounded px-2 py-1.5 border border-emerald-200/60"
+                className="flex items-start gap-1.5 rounded border border-black/10 bg-white px-1.5 py-1"
               >
-                <span className="inline-block h-1 w-1 rounded-full bg-[#d7c65d] flex-shrink-0 mt-1" />
+                <span className="mt-1 inline-block h-1 w-1 flex-shrink-0 rounded-full bg-black" />
                 <span
-                  className={`${bodyFont.className} text-[8px] font-semibold text-emerald-900 leading-tight`}
+                  className={`${bodyFont.className} text-[7px] leading-tight font-semibold text-black`}
                 >
                   {item}
                 </span>
@@ -272,6 +236,30 @@ function ServicesPanel() {
           </ul>
         </div>
       </div>
+    </div>
+  );
+}
+
+function RightGifPanel() {
+  return (
+    <div className="relative hidden h-[340px] w-full overflow-hidden rounded-[28px] border border-black/15 bg-white sm:block shadow-[0_20px_50px_-30px_rgba(0,0,0,0.22)]">
+      <img
+        src="/black.gif"
+        alt="Coffee showcase animation"
+        className="h-full w-full object-cover"
+      />
+    </div>
+  );
+}
+
+function MobileGifPanel() {
+  return (
+    <div className="relative h-[220px] w-full overflow-hidden rounded-[16px] border border-black/15 bg-white shadow-[0_20px_45px_-30px_rgba(0,0,0,0.3)]">
+      <img
+        src="/black.gif"
+        alt="Coffee showcase animation"
+        className="h-full w-full object-cover"
+      />
     </div>
   );
 }
@@ -308,7 +296,7 @@ export function ProductShowcaseSection() {
     <section className="relative overflow-hidden bg-[linear-gradient(180deg,#f6fbf5_0%,#eef7ef_100%)] px-6 pt-8 pb-12 lg:px-8 lg:pt-10 lg:pb-14">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-300/70 to-transparent" />
 
-      <div className="mx-auto flex max-w-7xl flex-col gap-4 sm:gap-8">
+      <div className="mx-auto flex max-w-7xl flex-col gap-5 sm:gap-8">
         <div className="mb-1 text-center sm:mb-3">
           <h2
             className={`${headingFont.className} text-3xl font-semibold tracking-tight text-black sm:text-5xl`}
@@ -318,6 +306,11 @@ export function ProductShowcaseSection() {
         </div>
 
         <div className="flex flex-col gap-4 sm:hidden">
+          <h3
+            className={`${bodyFont.className} px-1 text-center text-base font-semibold tracking-[0.1em] uppercase text-black`}
+          >
+            Products and Services
+          </h3>
           {mobileRows.map((row, rowIndex) => (
             <div key={`mobile-row-${rowIndex}`} className="flex flex-col gap-3">
               {(rowIndex === 0 ||
@@ -345,6 +338,7 @@ export function ProductShowcaseSection() {
               </div>
             </div>
           ))}
+          <MobileGifPanel />
         </div>
 
         <div className="hidden grid-cols-3 gap-8 sm:grid">
@@ -405,9 +399,14 @@ export function ProductShowcaseSection() {
           </div>
         </div>
 
-        <div className="hidden sm:grid">
+        <div className="hidden grid-cols-3 gap-8 sm:grid">
           <div className="col-span-3 flex flex-col gap-5">
-            <ServicesPanel />
+            <div className="grid grid-cols-2 gap-8">
+              <div className="col-span-1">
+                <ServicesPanel />
+              </div>
+              <RightGifPanel />
+            </div>
           </div>
         </div>
       </div>
