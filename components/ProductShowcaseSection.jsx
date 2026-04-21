@@ -244,9 +244,10 @@ function RightGifPanel() {
   return (
     <div className="relative hidden h-[340px] w-full overflow-hidden rounded-[28px] border border-black/15 bg-white sm:block shadow-[0_20px_50px_-30px_rgba(0,0,0,0.22)]">
       <img
-        src="/black.gif"
+        src="/black.webp"
         alt="Coffee showcase animation"
         className="h-full w-full object-cover"
+        loading="lazy"
       />
     </div>
   );
@@ -256,9 +257,10 @@ function MobileGifPanel() {
   return (
     <div className="relative h-[220px] w-full overflow-hidden rounded-[16px] border border-black/15 bg-white shadow-[0_20px_45px_-30px_rgba(0,0,0,0.3)]">
       <img
-        src="/black.gif"
+        src="/black.webp"
         alt="Coffee showcase animation"
         className="h-full w-full object-cover"
+        loading="lazy"
       />
     </div>
   );

@@ -127,9 +127,10 @@ export default function Home() {
             <div className="w-full lg:w-1/2">
               <div className="relative mx-auto w-full max-w-[460px] overflow-hidden rounded-[16px] border border-emerald-200/40 bg-white shadow-[0_20px_55px_-35px_rgba(0,0,0,0.28)] aspect-[16/10]">
                 <img
-                  src="/cofe1.jpg"
+                  src="/cofe1.webp"
                   alt="Our Story"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -172,9 +173,10 @@ export default function Home() {
               <Link className="mb-3 inline-flex items-center gap-2" href="/">
                 <span className="inline-flex rounded-xl bg-white px-3 py-2 shadow-[0_8px_22px_-12px_rgba(255,255,255,0.5)]">
                   <img
-                    src="/logoorg.png"
+                    src="/logoorg.webp"
                     alt="Green Coffee Commoditys Logo"
                     className="h-12 w-auto"
+                    loading="lazy"
                   />
                 </span>
               </Link>

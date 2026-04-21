@@ -191,9 +191,10 @@ export const NavbarLogo = () => {
       className="relative z-20 flex flex-1 items-center justify-center px-2 py-1"
     >
       <img
-        src="/logoorg.png"
+        src="/logoorg.webp"
         alt="Green Commoditys Logo"
         className="h-14 md:h-16 w-auto object-contain -translate-y-2"
+        loading="eager"
       />
     </a>
   );
