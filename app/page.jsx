@@ -157,7 +157,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <Link href="/story" className="w-fit">
+              <Link href="/our-story" className="w-fit">
                 <Button
                   borderRadius="1.75rem"
                   className={`${storyBodyFont.className} border-[#86efac] bg-[#dcfce7] px-8 py-3 font-semibold text-[#166534]`}
