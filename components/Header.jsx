@@ -15,11 +15,11 @@ export function Header() {
   const navItems = [
     {
       name: "Our Story",
-      link: "/about",
+      link: "/our-story",
     },
     {
       name: "Our Products",
-      link: "/products",
+      link: "/#products",
     },
   ];
 

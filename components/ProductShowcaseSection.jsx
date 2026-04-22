@@ -304,7 +304,7 @@ export function ProductShowcaseSection() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#f6fbf5_0%,#eef7ef_100%)] px-6 pt-8 pb-12 lg:px-8 lg:pt-10 lg:pb-14">
+    <section id="products" className="relative overflow-hidden bg-[linear-gradient(180deg,#f6fbf5_0%,#eef7ef_100%)] px-6 pt-8 pb-12 lg:px-8 lg:pt-10 lg:pb-14">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-300/70 to-transparent" />
 
       <div className="mx-auto flex max-w-7xl flex-col gap-5 sm:gap-8">
