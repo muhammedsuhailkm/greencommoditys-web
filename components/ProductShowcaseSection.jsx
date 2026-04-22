@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 
@@ -14,33 +15,39 @@ const bodyFont = Manrope({
   weight: ["500", "600", "700"],
 });
 
-const products = [
+export const products = [
   {
+    id: "classic-medium-roast-espresso",
     category: "PREMIUM COFFEE",
     title: "CLASSIC MEDIUM ROST ESPRESSO ",
     image: "/sample.webp",
   },
   {
+    id: "majestic-dark-roast",
     category: "PREMIUM COFFEE",
     title: "MAJESTIC DARK ROST ",
     image: "/sample.webp",
   },
   {
+    id: "natural-beans",
     category: "GREEN COFFEE CLASSIC",
     title: "NATURAL BEAN'S",
     image: "/sample.webp",
   },
   {
+    id: "black-pepper-gold",
     category: "BLACK PEPPER",
     title: "BLACK PEPPER GOLD",
     image: "/sample.webp",
   },
   {
+    id: "premium-green-cardamom",
     category: "CARDAMOM GOLD",
     title: "PREMIMUM GREEN CARDAMOM",
     image: "/sample.webp",
   },
   {
+    id: "indian-green-cardamom",
     category: "GREEN CARDAMOM",
     title: "INDIAN GREEN CARDAMOM",
     image: "/sample.webp",
@@ -65,37 +72,39 @@ function ProductCard({ product, tone = "brown" }) {
         : "text-[#2f7d32]";
 
   return (
-    <CardContainer className="w-full" containerClassName="w-full py-0">
-      <CardBody className="group/card relative h-[220px] w-full overflow-hidden rounded-[16px] border border-white/40 bg-white shadow-[0_25px_70px_-38px_rgba(22,101,52,0.4)] sm:h-[520px] sm:rounded-[28px]">
-        <img
-          src={product.image}
-          alt={product.title}
-          className="absolute bottom-[-2%] left-1/2 h-[96%] w-[88%] -translate-x-1/2 object-contain transition duration-500 group-hover/card:scale-105 sm:bottom-[-8%] sm:left-auto sm:right-[-16%] sm:h-[122%] sm:w-[86%] sm:translate-x-0 sm:rotate-[10deg]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/60" />
+    <Link href={`/products/${product.id}`} className="block w-full cursor-pointer">
+      <CardContainer className="w-full" containerClassName="w-full py-0">
+        <CardBody className="group/card relative h-[220px] w-full overflow-hidden rounded-[16px] border border-white/40 bg-white shadow-[0_25px_70px_-38px_rgba(22,101,52,0.4)] sm:h-[520px] sm:rounded-[28px]">
+          <img
+            src={product.image}
+            alt={product.title}
+            className="absolute bottom-[-2%] left-1/2 h-[96%] w-[88%] -translate-x-1/2 object-contain transition duration-500 group-hover/card:scale-105 sm:bottom-[-8%] sm:left-auto sm:right-[-16%] sm:h-[122%] sm:w-[86%] sm:translate-x-0 sm:rotate-[10deg]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/60" />
 
-        <CardItem
-          translateZ="70"
-          className={`${bodyFont.className} absolute left-2 top-2 max-w-[52%] text-[6px] font-semibold tracking-[0.08em] uppercase sm:left-7 sm:top-24 sm:max-w-[30%] sm:text-[9px] sm:tracking-[0.2em] ${categoryColorClass}`}
-        >
-          {product.category}
-        </CardItem>
+          <CardItem
+            translateZ="70"
+            className={`${bodyFont.className} absolute left-2 top-2 max-w-[52%] text-[6px] font-semibold tracking-[0.08em] uppercase sm:left-7 sm:top-24 sm:max-w-[30%] sm:text-[9px] sm:tracking-[0.2em] ${categoryColorClass}`}
+          >
+            {product.category}
+          </CardItem>
 
-        <CardItem
-          translateZ="80"
-          className={`${bodyFont.className} absolute left-2 top-5 max-w-[52%] text-[9px] leading-[1.05] font-extrabold uppercase sm:left-7 sm:top-32 sm:max-w-[30%] sm:text-[1.5rem] sm:leading-7 ${titleColorClass}`}
-        >
-          {product.title}
-        </CardItem>
+          <CardItem
+            translateZ="80"
+            className={`${bodyFont.className} absolute left-2 top-5 max-w-[52%] text-[9px] leading-[1.05] font-extrabold uppercase sm:left-7 sm:top-32 sm:max-w-[30%] sm:text-[1.5rem] sm:leading-7 ${titleColorClass}`}
+          >
+            {product.title}
+          </CardItem>
 
-        <CardItem
-          translateZ="110"
-          className="absolute right-2 bottom-2 rounded-full border border-white/30 bg-white/15 px-2 py-1 text-[7px] font-semibold tracking-[0.08em] text-white uppercase backdrop-blur-sm sm:right-7 sm:bottom-8 sm:px-4 sm:py-2 sm:text-xs sm:tracking-[0.22em]"
-        >
-          View Product
-        </CardItem>
-      </CardBody>
-    </CardContainer>
+          <CardItem
+            translateZ="110"
+            className="absolute right-2 bottom-2 rounded-full border border-white/30 bg-white/15 px-2 py-1 text-[7px] font-semibold tracking-[0.08em] text-white uppercase backdrop-blur-sm sm:right-7 sm:bottom-8 sm:px-4 sm:py-2 sm:text-xs sm:tracking-[0.22em]"
+          >
+            View Product
+          </CardItem>
+        </CardBody>
+      </CardContainer>
+    </Link>
   );
 }
 function QuotePanel() {
@@ -308,11 +317,7 @@ export function ProductShowcaseSection() {
         </div>
 
         <div className="flex flex-col gap-4 sm:hidden">
-          <h3
-            className={`${bodyFont.className} px-1 text-center text-base font-semibold tracking-[0.1em] uppercase text-black`}
-          >
-            Products and Services
-          </h3>
+
           {mobileRows.map((row, rowIndex) => (
             <div key={`mobile-row-${rowIndex}`} className="flex flex-col gap-3">
               {(rowIndex === 0 ||

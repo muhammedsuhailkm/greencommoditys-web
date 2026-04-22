@@ -27,11 +27,14 @@ export default function Home() {
             "group relative z-20 mr-auto ml-0 mt-0 max-w-2xl text-left text-4xl leading-tight font-bold tracking-tight text-balance text-neutral-600 sm:text-5xl md:text-6xl xl:text-7xl dark:text-neutral-700",
           )}
         >
-          Pure From nature, crafted for royality.{" "}
-          <div style={{ transform: "translateY(-5px)" }}>
-            <span className="inline-flex flex-nowrap items-baseline whitespace-nowrap">
+          Pure From nature, crafted for royalty.{" "}
+          <div
+            style={{ transform: "translateY(-5px)" }}
+            className="mt-2 sm:mt-4"
+          >
+            <span className="inline-flex flex-wrap items-baseline gap-x-2 gap-y-3">
               <CanvasText
-                text="Coffee"
+                text="Coffee ,"
                 backgroundClassName="bg-[#6f4a32] dark:bg-[#5b3924]"
                 colors={[
                   "rgba(61, 37, 20, 1)",
@@ -49,7 +52,7 @@ export default function Home() {
                 animationDuration={20}
               />
               <CanvasText
-                text=",cardomom&spices"
+                text="cardamom & spices "
                 backgroundClassName="bg-green-600 dark:bg-green-700"
                 colors={[
                   "rgba(34, 197, 94, 1)",
@@ -83,22 +86,24 @@ export default function Home() {
           speedScale={1}
         />
 
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-[38%] max-w-[180px] sm:max-w-[220px] md:inset-0 md:w-auto md:max-w-none">
-          <img
-            src="/cofee.webp"
-            alt="Decorative coffee visual 1"
-            className="absolute top-2 right-[8%] w-16 h-auto object-contain sm:w-20 md:w-24"
-          />
-          <img
-            src="/black.webp"
-            alt="Decorative coffee visual 2"
-            className="absolute top-[34%] right-[28%] h-14 w-14 rounded-xl object-cover sm:h-16 sm:w-16 md:right-[22%] md:h-20 md:w-20"
-          />
-          <img
-            src="/card.webp"
-            alt="Decorative coffee visual 3"
-            className="absolute top-[70%] md:top-[60%] right-[6%] w-24 h-auto object-contain sm:w-32 md:w-36"
-          />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 flex w-[45%] max-w-[180px] items-center justify-center sm:max-w-[250px] md:max-w-[320px] lg:pr-10">
+          <div className="relative h-[250px] w-full sm:h-[350px] md:h-[450px]">
+            <img
+              src="/cofee.webp"
+              alt="Decorative coffee visual 1"
+              className="absolute right-[10%] top-[5%] h-auto w-16 object-contain drop-shadow-xl sm:w-24 md:w-32"
+            />
+            <img
+              src="/black.webp"
+              alt="Decorative coffee visual 2"
+              className="absolute right-[45%] top-[35%] h-16 w-16 -rotate-6 rounded-2xl object-cover shadow-2xl sm:h-24 sm:w-24 md:h-32 md:w-32"
+            />
+            <img
+              src="/card.webp"
+              alt="Decorative coffee visual 3"
+              className="absolute bottom-[12%] right-[15%] h-auto w-20 rotate-12 object-contain drop-shadow-xl sm:w-28 md:w-40"
+            />
+          </div>
         </div>
       </div>
 
