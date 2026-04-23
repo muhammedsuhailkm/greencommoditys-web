@@ -7,6 +7,7 @@ import { ProductShowcaseSection } from "@/components/ProductShowcaseSection";
 import { Button } from "@/components/ui/moving-border";
 import { cn } from "@/lib/utils";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { BannerSlider } from "@/components/BannerSlider";
 
 const storyHeadingFont = Cormorant_Garamond({
   subsets: ["latin"],
@@ -106,6 +107,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <BannerSlider />
 
       <ProductShowcaseSection />
 

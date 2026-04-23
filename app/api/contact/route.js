@@ -2,10 +2,10 @@ import nodemailer from "nodemailer";
 
 export async function POST(req) {
   try {
-    const { name, email, message } = await req.json();
+    const { firstName, lastName, email, phone, message } = await req.json();
 
-    if (!name || !email || !message) {
-      return Response.json({ error: "All fields required" }, { status: 400 });
+    if (!firstName || !lastName || !email || !message) {
+      return Response.json({ error: "All required fields must be filled" }, { status: 400 });
     }
 
     const transporter = nodemailer.createTransport({
@@ -22,10 +22,11 @@ export async function POST(req) {
       from: `"Website Contact" <${process.env.SMTP_USER}>`,
       to: process.env.CONTACT_EMAIL,
       replyTo: email,
-      subject: `New Contact Form Message from ${name}`,
+      subject: `New Contact Form Message from ${firstName} ${lastName}`,
       text: `
-Name: ${name}
+Name: ${firstName} ${lastName}
 Email: ${email}
+Phone: ${phone || 'Not provided'}
 
 Message:
 ${message}

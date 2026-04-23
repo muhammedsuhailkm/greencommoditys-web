@@ -10,6 +10,8 @@ import {
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
 import { useState } from "react";
+import { Button } from "@/components/ui/moving-border";
+import Link from "next/link";
 
 export function Header() {
   const navItems = [
@@ -31,7 +33,17 @@ export function Header() {
       <NavBody>
         <NavItems items={navItems} />
         <NavbarLogo />
-        <div className="flex-1" />
+        <div className="flex-1 flex items-center justify-end">
+          <Link href="/contact-us">
+            <Button
+              borderRadius="1.75rem"
+              containerClassName="h-10 w-28 md:w-32 mr-2"
+              className="bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-100 border-emerald-200 dark:border-emerald-800 text-sm font-semibold"
+            >
+              Contact Us
+            </Button>
+          </Link>
+        </div>
       </NavBody>
 
       {/* Mobile Navigation */}
@@ -42,7 +54,17 @@ export function Header() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           />
           <NavbarLogo />
-          <div className="flex-1" />
+          <div className="flex-1 flex items-center justify-end">
+            <Link href="/contact-us">
+              <Button
+                borderRadius="1.75rem"
+                containerClassName="h-8 w-24 mr-2"
+                className="bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-100 border-emerald-200 dark:border-emerald-800 text-xs font-semibold"
+              >
+                Contact Us
+              </Button>
+            </Link>
+          </div>
         </MobileNavHeader>
 
         <MobileNavMenu
@@ -59,6 +81,13 @@ export function Header() {
               <span className="block">{item.name}</span>
             </a>
           ))}
+          <Link
+            href="/contact-us"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="relative text-neutral-600 font-bold font-nav uppercase tracking-wide dark:text-neutral-300 mt-4"
+          >
+            <span className="block text-[#0ea5e9]">Contact Us</span>
+          </Link>
         </MobileNavMenu>
       </MobileNav>
     </Navbar>
