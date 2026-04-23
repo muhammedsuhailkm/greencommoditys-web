@@ -102,7 +102,7 @@ export default function OurStoryPage() {
                     lineColor="#10b981"
                     dots={[
                       {
-                        start: { lat: 11.6854, lng: 76.1320 }, // Wayanad, Kerala
+                        start: { lat: 11.6854, lng: 76.132 }, // Wayanad, Kerala
                         end: { lat: 24.7136, lng: 46.6753 }, // Riyadh, Saudi Arabia
                       },
                     ]}
@@ -169,15 +169,20 @@ export default function OurStoryPage() {
       <section className="bg-[#121212] overflow-hidden">
         <div className="grid lg:grid-cols-2 min-h-[600px]">
           {/* Left Column - Image */}
-          <div className="relative h-[450px] lg:h-auto bg-neutral-800">
+          <div className="relative flex items-center justify-center py-8 lg:py-0">
             <img
-              src="/profile.jpg"
+              src="/prof3.png"
               alt="Muhammad Aslam Ayanki"
-              className="absolute inset-0 w-full h-full object-cover object-top"
+              className="
+      w-[85%] h-[320px] sm:h-[380px]
+      object-cover object-top
+      rounded-2xl shadow-md
+      
+      lg:absolute lg:inset-0 lg:w-full lg:h-full lg:rounded-none lg:shadow-none
+    "
               loading="lazy"
             />
           </div>
-
           {/* Right Column - Quote */}
           <div className="flex flex-col items-center justify-center p-10 sm:p-16 lg:p-24">
             <p
