@@ -41,6 +41,7 @@ export const metadata = {
 };
 
 import { Header } from "@/components/Header";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 
@@ -53,6 +54,7 @@ export default function RootLayout({ children }) {
       <body>
         <Header />
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );
