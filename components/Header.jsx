@@ -81,13 +81,6 @@ export function Header() {
               <span className="block">{item.name}</span>
             </a>
           ))}
-          <Link
-            href="/contact-us"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="relative text-neutral-600 font-bold font-nav uppercase tracking-wide dark:text-neutral-300 mt-4"
-          >
-            <span className="block text-[#0ea5e9]">Contact Us</span>
-          </Link>
         </MobileNavMenu>
       </MobileNav>
     </Navbar>

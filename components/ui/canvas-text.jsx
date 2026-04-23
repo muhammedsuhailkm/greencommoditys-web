@@ -1,4 +1,4 @@
-"use client";;
+"use client";
 import { cn } from "@/lib/utils";
 import React, { useEffect, useRef, useState, useCallback } from "react";
 
@@ -22,7 +22,7 @@ export function CanvasText({
   lineWidth = 1.5,
   lineGap = 10,
   curveIntensity = 60,
-  overlay = false
+  overlay = false,
 }) {
   const canvasRef = useRef(null);
   const textRef = useRef(null);
@@ -66,7 +66,9 @@ export function CanvasText({
         width: Math.ceil(rect.width) || 400,
         height: Math.ceil(rect.height) || 200,
       });
-      setFont(`${computed.fontWeight} ${computed.fontSize} ${computed.fontFamily}`);
+      setFont(
+        `${computed.fontWeight} ${computed.fontSize} ${computed.fontFamily}`,
+      );
     };
 
     updateDimensions();
@@ -136,7 +138,14 @@ export function CanvasText({
 
         ctx.beginPath();
         ctx.moveTo(0, y);
-        ctx.bezierCurveTo(width * 0.33, y + curve1, width * 0.66, y + curve2, width, y);
+        ctx.bezierCurveTo(
+          width * 0.33,
+          y + curve1,
+          width * 0.66,
+          y + curve2,
+          width,
+          y,
+        );
         ctx.stroke();
       }
 
@@ -162,11 +171,20 @@ export function CanvasText({
 
   return (
     <span
-      className={cn("relative inline-block", overlay && "absolute inset-0", className)}>
+      className={cn(
+        "relative inline-block",
+        overlay && "absolute inset-0",
+        className,
+      )}
+    >
       <span
         ref={bgRef}
-        className={cn("pointer-events-none absolute h-0 w-0 opacity-0", backgroundClassName)}
-        aria-hidden="true" />
+        className={cn(
+          "pointer-events-none absolute h-0 w-0 opacity-0",
+          backgroundClassName,
+        )}
+        aria-hidden="true"
+      />
       <span ref={textRef} className="invisible inline-block" aria-hidden="true">
         {text}
       </span>
@@ -178,7 +196,8 @@ export function CanvasText({
           height: dimensions.height || "auto",
         }}
         aria-label={text}
-        role="img" />
+        role="img"
+      />
     </span>
   );
 }

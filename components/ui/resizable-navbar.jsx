@@ -169,17 +169,18 @@ export const MobileNavMenu = ({ children, className, isOpen, onClose }) => {
 export const MobileNavToggle = ({ isOpen, onClick }) => {
   return (
     <div className="flex flex-1 justify-start">
-      {isOpen ? (
-        <IconX
-          className="text-black w-8 h-8 cursor-pointer dark:text-white"
-          onClick={onClick}
-        />
-      ) : (
-        <IconMenu2
-          className="text-black w-8 h-8 cursor-pointer dark:text-white"
-          onClick={onClick}
-        />
-      )}
+      <button 
+        onClick={onClick} 
+        type="button"
+        className="p-1 -ml-1 focus:outline-none"
+        aria-label={isOpen ? "Close menu" : "Open menu"}
+      >
+        {isOpen ? (
+          <IconX className="text-black w-8 h-8 cursor-pointer dark:text-white" />
+        ) : (
+          <IconMenu2 className="text-black w-8 h-8 cursor-pointer dark:text-white" />
+        )}
+      </button>
     </div>
   );
 };
