@@ -22,13 +22,13 @@ const storyBodyFont = Manrope({
 export default function Home() {
   return (
     <div>
-      <div className="relative flex w-full min-h-[60vh] mt-20 items-center justify-start overflow-hidden border border-transparent px-4 sm:px-8 lg:px-12 shadow ring-1 shadow-black/10 ring-black/5 dark:shadow-white/10 dark:ring-white/5">
-        <Image 
-          src="/home.JPG" 
-          alt="Hero Background" 
-          fill 
+      <div className="relative flex w-full min-h-[60vh] mt-20 items-center justify-start overflow-hidden px-4 sm:px-8 lg:px-12">
+        <Image
+          src="/home.JPG"
+          alt="Hero Background"
+          fill
           priority
-          className="object-cover object-center z-0" 
+          className="object-cover object-center z-0"
         />
         <div className="absolute inset-0 bg-black/20 z-10"></div>
         <h2
