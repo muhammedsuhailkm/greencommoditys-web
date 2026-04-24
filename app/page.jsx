@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/moving-border";
 import { cn } from "@/lib/utils";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import { BannerSlider } from "@/components/BannerSlider";
+import Image from "next/image";
 
 const storyHeadingFont = Cormorant_Garamond({
   subsets: ["latin"],
@@ -21,8 +22,15 @@ const storyBodyFont = Manrope({
 export default function Home() {
   return (
     <div>
-      <div className="relative flex w-full min-h-[60vh] mt-20 items-center justify-start overflow-hidden bg-[url('/home.JPG')] bg-cover bg-center bg-no-repeat border border-transparent px-4 sm:px-8 lg:px-12 shadow ring-1 shadow-black/10 ring-black/5 dark:shadow-white/10 dark:ring-white/5">
-        <div className="absolute inset-0 bg-black/20 z-0"></div>
+      <div className="relative flex w-full min-h-[60vh] mt-20 items-center justify-start overflow-hidden border border-transparent px-4 sm:px-8 lg:px-12 shadow ring-1 shadow-black/10 ring-black/5 dark:shadow-white/10 dark:ring-white/5">
+        <Image 
+          src="/home.JPG" 
+          alt="Hero Background" 
+          fill 
+          priority
+          className="object-cover object-center z-0" 
+        />
+        <div className="absolute inset-0 bg-black/20 z-10"></div>
         <h2
           className={cn(
             "group relative z-20 mr-auto ml-0 mt-0 max-w-2xl text-left text-4xl leading-tight font-bold tracking-tight text-balance text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] sm:text-5xl md:text-6xl xl:text-7xl",
