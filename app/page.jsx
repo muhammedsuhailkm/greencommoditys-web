@@ -1,7 +1,6 @@
 import { Link } from "@/components/Link";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { FaInstagram, FaYoutube } from "react-icons/fa";
-import { DottedGlowBackground } from "@/components/ui/dotted-glow-background";
 import { CanvasText } from "@/components/ui/canvas-text";
 import { ProductShowcaseSection } from "@/components/ProductShowcaseSection";
 import { Button } from "@/components/ui/moving-border";
@@ -22,10 +21,11 @@ const storyBodyFont = Manrope({
 export default function Home() {
   return (
     <div>
-      <div className="relative flex w-full min-h-[60vh] mt-20 items-center justify-start overflow-hidden border border-transparent px-4 sm:px-8 lg:px-12 shadow ring-1 shadow-black/10 ring-black/5 dark:shadow-white/10 dark:ring-white/5">
+      <div className="relative flex w-full min-h-[60vh] mt-20 items-center justify-start overflow-hidden bg-[url('/home.JPG')] bg-cover bg-center bg-no-repeat border border-transparent px-4 sm:px-8 lg:px-12 shadow ring-1 shadow-black/10 ring-black/5 dark:shadow-white/10 dark:ring-white/5">
+        <div className="absolute inset-0 bg-black/20 z-0"></div>
         <h2
           className={cn(
-            "group relative z-20 mr-auto ml-0 mt-0 max-w-2xl text-left text-4xl leading-tight font-bold tracking-tight text-balance text-neutral-600 sm:text-5xl md:text-6xl xl:text-7xl dark:text-neutral-700",
+            "group relative z-20 mr-auto ml-0 mt-0 max-w-2xl text-left text-4xl leading-tight font-bold tracking-tight text-balance text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] sm:text-5xl md:text-6xl xl:text-7xl",
           )}
         >
           Pure From nature, crafted for royalty.{" "}
@@ -36,18 +36,18 @@ export default function Home() {
             <span className="inline-flex flex-wrap items-baseline gap-x-2 gap-y-3">
               <CanvasText
                 text="Coffee ,"
-                backgroundClassName="bg-[#6f4a32] dark:bg-[#5b3924]"
+                backgroundClassName="bg-white"
                 colors={[
-                  "rgba(61, 37, 20, 1)",
-                  "rgba(87, 54, 30, 1)",
-                  "rgba(111, 74, 50, 1)",
-                  "rgba(138, 94, 62, 1)",
-                  "rgba(168, 121, 84, 0.95)",
-                  "rgba(138, 94, 62, 1)",
-                  "rgba(111, 74, 50, 1)",
-                  "rgba(87, 54, 30, 1)",
-                  "rgba(61, 37, 20, 1)",
-                  "rgba(41, 24, 12, 0.95)",
+                  "#ffffff",
+                  "#fafafa",
+                  "#f5f5f5",
+                  "#e5e5e5",
+                  "#d4d4d4",
+                  "#e5e5e5",
+                  "#f5f5f5",
+                  "#fafafa",
+                  "#ffffff",
+                  "#ffffff",
                 ]}
                 lineGap={1.5}
                 animationDuration={20}
@@ -73,39 +73,6 @@ export default function Home() {
             </span>
           </div>
         </h2>
-
-        <DottedGlowBackground
-          className="pointer-events-none absolute inset-0"
-          opacity={1}
-          gap={10}
-          radius={1.6}
-          color="#86efac"
-          glowColor="#4ade80"
-          backgroundOpacity={0}
-          speedMin={0.3}
-          speedMax={1.6}
-          speedScale={1}
-        />
-
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 flex w-[45%] max-w-[180px] items-center justify-center sm:max-w-[250px] md:max-w-[320px] lg:pr-10">
-          <div className="relative h-[250px] w-full sm:h-[350px] md:h-[450px]">
-            <img
-              src="/cofee.webp"
-              alt="Decorative coffee visual 1"
-              className="absolute right-[10%] top-[5%] h-auto w-16 object-contain drop-shadow-xl sm:w-24 md:w-32"
-            />
-            <img
-              src="/black.webp"
-              alt="Decorative coffee visual 2"
-              className="absolute right-[45%] top-[35%] h-16 w-16 -rotate-6 rounded-2xl object-cover shadow-2xl sm:h-24 sm:w-24 md:h-32 md:w-32"
-            />
-            <img
-              src="/card.webp"
-              alt="Decorative coffee visual 3"
-              className="absolute bottom-[12%] right-[15%] h-auto w-20 rotate-12 object-contain drop-shadow-xl sm:w-28 md:w-40"
-            />
-          </div>
-        </div>
       </div>
 
       <BannerSlider />
